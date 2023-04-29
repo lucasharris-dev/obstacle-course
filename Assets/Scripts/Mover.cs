@@ -9,11 +9,23 @@ public class Mover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        PrintInstructions();
     }
 
     // Update is called once per frame
     void Update()
+    {
+        MovePlayer();
+    }
+
+    void PrintInstructions()
+    {
+        Debug.Log("welcome to the game");
+        Debug.Log("your goal is to make it to the end of the level without hitting any obstacles");
+        Debug.Log("move with w,a,s,d");
+    }
+
+    void MovePlayer()
     {
         float xValue = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
         float yValue = Input.GetAxis("Jump") * Time.deltaTime;
